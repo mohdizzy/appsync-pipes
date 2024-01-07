@@ -1,0 +1,5 @@
+pipelineFunctions:  
+  createOrderLocalResolver:
+    dataSource: orderCreateDataSource
+    description: "Resolver for mutation calls to invoke order create subscription"
+    code: "./resolvers/orderCreateResolver.js"

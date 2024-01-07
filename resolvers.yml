@@ -1,0 +1,3 @@
+Mutation.createOrder:
+  functions:
+    - createOrderLocalResolver    

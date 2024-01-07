@@ -1,0 +1,29 @@
+schema {
+  mutation: Mutation
+  query: Query
+  subscription: Subscription
+}
+
+type Mutation {
+  createOrder(createOrderInput: CreateOrderInput!): OrderResponse
+}
+
+type Query {
+  test(id:String): String
+}
+
+type Subscription {
+  onOrderCreate(productId: String!): OrderResponse
+    @aws_subscribe(mutations: ["createOrder"])
+}
+
+input CreateOrderInput {
+  userId: String!
+  orderId: String!
+  productId: String!
+}
+
+type OrderResponse {
+  productId: String
+}
+
